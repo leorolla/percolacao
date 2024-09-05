@@ -1,0 +1,68 @@
+A próxima desigualdade que discutiremos vai no sentido contrário da
+desigualdade de
+FKG e envolve uma intersecção {\em restrita} de eventos crescentes.
+
+Dados dois eventos crescentes $A$ e $B$ de ${\cal E}$, dizemos que $A$ e $B$ ocorrem 
+{\em disjuntamente} (para um dado $\om$) se existirem dois caminhos abertos (de elos)
+disjuntos (em $\om$) tais que o primeiro garante a ocorrência de $A$ e o segundo 
+garante a ocorrência de $B$.
+Denotamos por $A\circ B$ a ocorrência disjunta de $A$ e $B$.
+
+Por exemplo, no evento $\{x\lr y\}\circ\{u\lr v\}$ há dois caminhos abertos disjuntos,
+um ligando os sítios $x$ e $y$ e outro ligando os sítios $u$ e $v$.
+
+\vs
+
+\bteo[Desigualdade de BK]
+
+Sejam $A$ e $B$ dois eventos crescentes de ${\cal E}$
+dependendo apenas de um conjunto finito de elos. Então
+$$
+\p(A\circ B)\leq\p(A)\p(B).
+$$
+\eteo
+
+\vs
+
+O nome da desigualdade é referência a seus descobridores van den Berg e 
+Kesten \cite{kn:vBK}.
+A restrição a eventos que dependem apenas de um conjunto finito de elos
+deve-se a
+razões técnicas, a extensão pode ser feita para outros casos de interesse.
+Para uma discussão mais completa com a demonstração do resultado, veja
+\cite{kn:G} página 29. Discutiremos abaixo a idéia da prova, usando os eventos
+do exemplo acima, mas restritos a uma sub-rede finita de $\zd$ (por exemplo, o quadrado 
+$Q_M$ do capítulo anterior, para algum $M$), do contrário eles dependerão de um 
+conjunto infinito de elos.
+
+Notemos para começar que dada a ocorrência de $\{u\lr v\}$, temos informação
+sobre elos abertos, que {\em não podem} ser usados na ocorrência disjunta de
+$\{x\lr y\}$. Isto torna plausível a desigualdade
+$$\p(\{x\lr y\}\circ\{u\lr v\}|u\lr v)\leq\p(x\lr y).$$
+
+A idéia da prova é a seguinte. Seja ${\cal G}$ uma sub-rede finita de $\zd$ e $e$ um
+elo de ${\cal G}$. Substituamos $e$ por dois elos paralelos 
+$e'$ e $e''$ abertos com probabilidade $p$ e fechados com probabilidade $1-p$
+independentemente um do outro. Considera-se a ocorrência disjunta de 
+$\{x\lr y\}$ e $\{u\lr v\}$ nesta nova rede, mas com o primeiro evento evitando
+$e''$ e o segundo evento evitando $e'$. Observa-se que esta operação não pode
+diminuir a probabilidade original. Continua-se
+indutivamente substitindo-se os elos $f$ de ${\cal G}$ por elos paralelos 
+e independentes
+$f'$ e $f''$ e considerando-se a ocorrência disjunta de $\{x\lr y\}$ e $\{u\lr v\}$
+na nova rede, a ocorrência do primeiro sem usar elos $''$ e a do segundo
+sem usar elos $'$. A operação não diminui a probabilidade do passo anterior. 
+Ao término, esgotados todos os elos de ${\cal G}$, temos
+duas cópias independentes desta rede, uma na qual perguntamos pela ocorrência de
+$\{x\lr y\}$, na outra perguntamos pela ocorrência de
+$\{u\lr v\}$, eventos portanto independentes. A probabilidade final é então o produto
+das probabilidades dos eventos e a cadeia de desigualdades levando à probabilidade
+de ocorrência disjunta dos eventos em ${\cal G}$ nos dá o resultado.
+
+\begin{defin}
+\label{def:con}
+À probabilidade de que dois sítios $x$ e $y$ estejam conectados por um caminho
+aberto, $$\p(x\lr y),$$
+chamamos {\em função de conectividade} (entre $x$ e $y$), com a notação
+$\tp(x,y).$
+\end{defin}

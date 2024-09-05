@@ -1,0 +1,172 @@
+
+% !TeX spellcheck = pt_BR
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt]{book}
+
+\usepackage[]{bookml}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fontenc}
+
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+\usepackage{amssymb}
+
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+
+\hypersetup{
+hidelinks,
+colorlinks,
+urlcolor=blue,
+linkcolor=[rgb]{.4,0,0},
+citecolor=[rgb]{0,.3,0},
+pdfstartview=FitH,
+pdfpagemode=UseNone
+}
+
+
+\usepackage[only,fivrm,sevrm]{rawfonts}
+\begin{document}
+%\baselineskip=22pt
+
+\input{def}
+\title{\LARGE{\bf Notas em Percolação}} 
+\author{Luiz Renato G. Fontes\\Instituto de Matemática e Estatística --- USP\\
+\\
+\\
+\\
+\\
+\\
+\\
+\small
+\copyright\ 1996--2020\ L.R.G.Fontes. Permitido o uso nos termos da licença CC BY-SA 4.0\\
+\\
+\small
+Como atribuição ao texto original, incluir sempre um link para\\
+\small
+\url{https://github.com/leorolla/percolacao}}
+\date{}
+\maketitle
+
+\newpage
+\pagenumbering{roman}
+
+\input{pictex}
+%\makebox{}
+%\vspace{70pt}
+
+\mbox{}
+\vspace{2cm}
+
+\begin{flushleft}
+{\Huge {\bf Prefácio}}
+\end{flushleft}
+\vspace{70pt}
+\input{pre}
+
+
+\newpage  
+
+\tableofcontents
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{Teo}{Teorema}[chapter]
+\newtheorem{defin}{Definição}[section]
+\newtheorem{prop}{Proposição}[section]
+\newtheorem{lem}{Lema}[section]
+\newtheorem{obs}{Observação}[section]
+\newtheorem{cor}{Corolário}[section]
+\newtheorem{Defin}{Definição}[chapter]
+\newtheorem{Prop}{Proposição}[chapter]
+\newtheorem{Lem}{Lema}[chapter]
+\newtheorem{Obs}{Observação}[chapter]
+\newtheorem{Cor}{Corolário}[chapter]
+\renewcommand{\theequation}{\thesection .\arabic{equation}}
+
+
+
+
+\chapter{Introdução}
+\pagenumbering{arabic}
+\setcounter{equation}{0}
+\label{chp:int}
+\input{int}
+
+\section{O Modelo}
+\setcounter{equation}{0}
+\label{sec:mod}
+\input{mod}
+
+\section{Primeiros Resultados}
+\setcounter{equation}{0}
+\label{sec:res}
+\input{res}
+
+\chapter{Ferramentas úteis}
+\setcounter{equation}{0}
+\label{chp:fer}
+\input{fer}
+
+\section{Desigualdade de FKG}
+\setcounter{equation}{0}
+\label{sec:fkg}
+\input{fkg}
+
+\section{Desigualdade de BK}
+\setcounter{equation}{0}
+\label{sec:bk}
+\input{bk}
+
+\section{Fórmula de Russo}
+\setcounter{equation}{0}
+\label{sec:rus}
+\input{rus}
+
+\chapter{Fase Subcrítica: Decaimento Exponencial}
+\renewcommand{\theequation}{\thechapter .\arabic{equation}}
+\pagestyle{myheadings}
+\markboth{CAPÍTULO 3.\quad FASE SUBCRÍTICA}{DECAIMENTO EXPONENCIAL}
+\setcounter{equation}{0}
+\label{chp:exp}
+\input{exp}
+
+\chapter{Fase Supercrítica: Unicidade do Aglomerado Infinito}
+\pagestyle{myheadings}
+\markboth{CAPÍTULO 4.\quad FASE SUPERCRÍTICA}{UNICIDADE DO AGLOMERADO INFINITO}
+\setcounter{equation}{0}
+\label{chp:uni}
+\input{uni}
+
+\chapter{O Modelo em 2 Dimensões: Dualidade}
+\pagestyle{myheadings}
+\markboth{CAPÍTULO 5.\quad DUAS DIMENSÕES}{DUALIDADE}
+\setcounter{equation}{0}
+\label{chp:bid}
+\input{bid}
+
+\chapter{Continuidade no Ponto Crítico: Renormalização}
+\pagestyle{myheadings}
+\markboth{CAPÍTULO 6.\quad NO PONTO CRÍTICO}{RENORMALIZAÇÃO}
+\setcounter{equation}{0}
+\label{chp:ren}
+\input{ren}
+
+\appendix
+
+\chapter{Prova a um lema do Capítulo 3}
+\pagestyle{myheadings}
+\markboth{APÊNDICE}{LEMA DO CAPÍTULO 3}
+\setcounter{equation}{0}
+\label{app}
+\input{app}
+
+\input{bib}
+
+\end{document}
+
+

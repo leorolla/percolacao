@@ -1,0 +1,88 @@
+Considere a rede hipercúbica em $d$ dimensões ($\zd,\ed$) (denotada por um
+abuso de linguagem costumeiro por $\zd$), onde $\zd$ é 
+o conjunto de sítios da rede e $\ed=\{(x,y)\in\zd:||x-y||_1=1\}$ é o
+seu conjunto de elos (vizinhos mais próximos).
+
+A cada elo de $\ed$ será atribuido aleatoriamente o status {\em aberto} ou 
+{\em fechado} da seguinte maneira. Seja ${\cal X}:=\{X_e, e\in\ed\}$ uma 
+família de variáveis aleatórias
+(v.a.'s) independentes e identicamente distribuidas (i.i.d.) com distribuição
+comum {\em de Bernoulli} com parâmetro $p$, isto é,
+$$\p(X_e=1)=1-\p(X_e=0)=p$$ para todo $e\in\ed$,
+onde $p$ é um número real entre $0$ e $1$ e
+$\p$ é a probabilidade associada a ${\cal X}$ (algumas vezes denotada
+$\pd$). A esperança com respeito a esta probabilidade será denotado por $\ep$.
+
+Mais formalmente, o espaço amostral do modelo será dado por $\Om=\{0,1\}^{\ed}$.
+A $\s$-álgebra é a usual, denotada por ${\cal E}$, gerada pelos eventos 
+cilíndricos, isto é, aqueles
+que dependem de elos em subconjuntos finitos de $\ed$ apenas. A probabilidade
+$\p$ é a probabilidade produto em $\Om$ atribuindo peso $p$ a $1$'s e $1-p$ a
+$0$'s. $X_e$ é a projeção na coordenada $e$, isto é, $$X_e(\om)=\om_e$$ para
+todo $\om\in\Om$.
+
+$X_e=1$ indica que o elo $e$ 
+está aberto e $X_e=0$ indica que $e$ está fechado.
+
+Um conjunto de elos de $\ed$, $\{e_1,e_2,\ldots,e_n\},\, n\geq1$, onde $e_i=(x_i,y_i)$,
+$i=1,2,\ldots,n$, será dito um {\em caminho} se $x_1,x_2,\ldots,x_n$ forem
+distintos e $y_i=x_{i+1}$, $i=1,2,\ldots,n-1$ (não há {\em loops}). 
+Um caminho será dito {\em aberto}
+se todos os seus elos estiverem abertos (isto é, se $X_{e_i}=1$, $i=1,2,\ldots,n$).
+Diremos que dois sítios da rede, $x$ e $y$, estão {\em conectados} (notação:
+$x\lr y$) se existir um caminho aberto $\{e_1,e_2,\ldots,e_n\}$ com $x_1=x$ e $y_n=y$.
+Vê-se que a conectividade é uma relação de equivalência e às classes de
+equivalência em que se dividem os sítios chamaremos {\em aglomerados} (ou
+a expressão em inglês
+{\em clusters}). Denotaremos por $C_x$ o aglomerado do sítio $x$ e por $C$
+o aglomerado da origem, objeto básico de nosso estudo.
+
+Estaremos interessados inicialmente em $|C|$, o volume (ou cardinalidade)
+do aglomerado da origem, mais precisamente em sua distribuição (que, note-se,
+é a mesma que a de $|C_x|$ para todo sítio $x$, pela invariância por
+translação de $\p$). Especificamente, queremos
+saber se aglomerados infinitos podem ocorrer (com probabilidade positiva).
+
+Em dimensão 1, o problema é trivial, pois, denotando por
+$C_-$ e $C_+$ os sítios de $C$ à esquerda e à direita da origem, respectivamente,
+temos que $|C_-|$ e $|C_+|$ são v.a.'s i.i.d. com $\p(|C_+|\geq k)=p^k$. Logo, não há
+aglomerados infinitos quase-certamente em dimensão 1 se $p<1$.
+Restringiremo-nos pois a $d\geq2$.
+
+$|C|$ é uma v.a. que pode assumir os valores $1,2,\ldots,\infty$.
+Uma quantidade de interesse será $$\tep:=\p(\cl=\infty).$$
+Podemos então escrever $$\tep=1-\sum_{k=1}^{\infty}\p(\cl=k).$$
+
+Expressões para $\p(\cl=k)$ são relativamente simples de calcular para
+$k$ pequeno, mas se tornam combinatorialmente crescentemente complicadas 
+para $k$ crescente
+e não há uma forma explícita para $k$ genérico. O estudo de $\tep$ deve
+seguir uma outra abordagem.
+
+Na próxima seção, provaremos o resultado principal deste capítulo, o 
+primeiro não-trivial da teoria, aquele que estabelece a existência de
+transição de fase no modelo de percolação em 2 ou mais dimensões, como 
+enunciado em seguida.
+
+
+\vs
+
+
+\bteo
+\label{teo:trans}
+Para $d\geq2$, existe um valor crítico do parâmetro $p$, denomi\-nado $p_c$,
+no intervalo aberto $(0,1)$ tal que 
+\beqnn
+\tep=0,\quad \mbox{se}\quad p<p_c\\
+\tep>0,\quad \mbox{se}\quad p>p_c.
+\eeqnn
+\eteo
+
+\vs
+
+
+Resultados subseqüentes, de que nos ocuparemos em capítulos seguintes,
+procuram caracterizar as diversas fases do modelo: a {\em fase subcrítica}
+($p<\pce$), a {\em fase supercrítica} ($p>\pce$) e a {\em fase crítica} ($p=\pce$).
+
+\vs

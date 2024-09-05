@@ -1,0 +1,110 @@
+Eventos e, mais geralmente, variáveis aleatórias crescentes do modelo de percolação
+têm a propriedade de serem positivamente correlacionadas.
+ 
+\vfill\eject
+
+\bteo[Desigualdade de FKG]
+\label{teo:fkg}
+Sejam $Z$ e $Y$ duas variáveis a\-le\-a\-tó\-rias crescentes e limitadas em $\Om$.
+Então
+\beq
+\ep(ZY)\geq\ep(Z)\ep(Y).
+\eeq
+\eteo
+
+\vs
+
+\noindent{\bf Prova do Teorema \ref{teo:fkg}}
+
+Vamos supor inicialmente que $Z$ e $Y$ sejam cilíndricas, isto é, dependam apenas 
+de um conjunto finito de
+elos $\{e_1,e_2,\ldots,e_n\}$. Provaremos o teorema neste caso por indução em
+$n$.
+
+Para $n=1$, $Z=f(X_{e_1})$ e $Y=g(X_{e_1})$, onde $f$ e $g$ são crescentes.
+Seja $Y'$ uma cópia independente de $X_{e_1}$ (isto é, $Y'$ e $X_{e_1}$ são
+i.i.d.). Então
+$$[f(X_{e_1})-f(Y')][g(X_{e_1})-g(Y')]\geq0,$$
+pelo fato de $f$ e $g$ serem crescentes. Portanto
+$$\ep\left\{[f(X_{e_1})-f(Y')][g(X_{e_1})-g(Y')]\right\}\geq0.$$
+Expandindo o termo à esquerda, temos
+\beqn\nonumber&&\ep[f(X_{e_1})g(X_{e_1})]+\ep[f(Y')g(Y')]\\ \label{eq:f1}\ge
+\ep[f(X_{e_1})g(Y')]+\ep[f(Y')g(X_{e_1})].\eeqn Pela independência entre 
+$X_{e_1}$ e $Y'$, a expressão à direita fica
+$$\ep[f(X_{e_1})]\ep[g(Y')]+\ep[f(Y')]\ep[g(X_{e_1})].$$
+Como $X_{e_1}$ e $Y'$ têm a mesma distribuição, a desigualdade (\ref{eq:f1})
+fica
+\beqnn&&\ep[f(X_{e_1})g(X_{e_1})]+\ep[f(X_{e_1})g(X_{e_1})]\\ \ge
+\ep[f(X_{e_1})]\ep[g(X_{e_1})]+\ep[f(X_{e_1})]\ep[g(X_{e_1})],\eeqnn
+isto é
+$$2\ep[f(X_{e_1})g(X_{e_1})] \geq
+2\ep[f(X_{e_1})]\ep[g(X_{e_1})]$$
+e o resultado está provado para $n=1$. 
+
+Supondo-o válido para $n=k$, seja $n=k+1$. Então 
+$$Z=f(X_{e_1},\ldots,X_{e_k},X_{e_{k+1}})\quad\mbox{e}\quad
+Y=g(X_{e_1},\ldots,X_{e_k},X_{e_{k+1}}),$$ com $f$ e $g$ crescentes.
+
+Agora
+\beqnn
+\ep(ZY)\=\ep\left[f(X_{e_1},\ldots,X_{e_k},X_{e_{k+1}})
+g(X_{e_1},\ldots,X_{e_k},X_{e_{k+1}})\right]\\
+\=\ep\left\{\ep\left[f(X_{e_1},\ldots,X_{e_k},X_{e_{k+1}})
+g(X_{e_1},\ldots,X_{e_k},X_{e_{k+1}})|X_{e_{k+1}}\right]\right\}.
+\eeqnn
+Na esperança condicional acima, $X_{e_{k+1}}$ está fixo e portanto
+$f$ e $g$ podem ser vistas como funções de $X_{e_1},\ldots,X_{e_k}$
+e a hipótese de indução pode ser aplicada para dar que a última 
+expressão acima é maior ou igual a 
+$$\ep\left\{\ep\left[f(X_{e_1},\ldots,X_{e_k},X_{e_{k+1}})|X_{e_{k+1}}\right]
+\ep\left[g(X_{e_1},\ldots,X_{e_k},X_{e_{k+1}})|X_{e_{k+1}}\right]\right\}.$$
+Agora é claro que as esperanças condicionais acima são funções crescentes
+de $X_{e_{k+1}}$. Novo uso da hipótese de indução produz o resultado para
+$n=k+1$, completando o passo de indução.
+
+Para completar a demonstração, consideremos $Z$ e $Y$ não necessariamente
+cilíndricas. Seja $e_1,e_2,\ldots$ uma enumeração de $\ed$. Pelo Teorema da
+Convergência de Martingais (veja \cite{kn:B}),
+$$Z=\lim_{n\to\infty}\ep\left[Z|X_{e_1},\ldots,X_{e_n}\right]$$
+e de maneira semelhante para $Y$.
+Pelo passo anterior, a desigualdade de FKG vale quando $Z$ e $Y$ são substituidos
+por $$\ep\left[Z|X_{e_1},\ldots,X_{e_n}\right]\quad\mbox{e}\quad 
+\ep\left[Y|X_{e_1},\ldots,X_{e_n}\right].$$ Uma passagem ao limite em $n$ e o Teorema
+da Convergência Dominada nos dão o resultado geral. $\bo$
+
+\vs
+
+\bcor
+\label{cor:fkg}
+Se $A$ e $B$ forem eventos crescentes, então
+\beq
+\label{eq:fkg}
+\p(A\cap B)\geq\p(A)\p(B).
+\eeq
+\ecor
+
+\vs
+
+\noindent{\bf Prova}
+
+Basta aplicar o Teorema \ref{teo:fkg} com $Z=\ind_A$ e $Y=\ind_B$ $\bo$
+
+\vs
+
+Observamos que a desigualdade em (\ref{eq:fkg}) é equivalente a
+$$\p(A|B)\geq\p(A),$$ 
+o que nos diz que a ocorrência de um evento crescente aumenta a probabilidade
+de ocorrência de um outro evento crescente.
+
+\vs
+
+O Teorema~\ref{teo:fkg} vale também para duas v.a.'s 
+decrescentes (na ordem parcial), pois a desigualdade não muda se substituirmos $Z$ e $Y$ respectivamente
+por $-Z$ e $-Y$, que são crescentes. Segue que o Corolário~\ref{cor:fkg} vale
+também para dois eventos decrescentes.
+
+\vs
+
+As desigualdades acima foram primeiro provadas por Harris \cite{kn:H} e
+posteriormente generalizadas para outros modelos por Fortuin, Kasteleyn e
+Ginibre \cite{kn:FKG}, cujas iniciais batizaram-nas.

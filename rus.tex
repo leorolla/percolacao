@@ -1,0 +1,117 @@
+O próximo resultado é uma fórmula para a derivada em $p$ da probabilidade de
+um evento crescente. Para obtê-la, usaremos a construção acoplada do modelo
+de percolação
+usando a família de variáveis uniformes ${\cal Z}$ vista no capítulo anterior
+(o modelo padrão).
+
+Consideramos então, para uma dada configuração das variáveis em ${\cal Z}$, a
+configuração de elos $p$-abertos $\op$, isto é, $(\op(e))_{e\in\ed}$ tal que 
+$$\op(e)=\cases{1,& se $Z_e<p$\cr
+                0,& caso contrário}$$
+para todo $e\in\ed$.
+
+Seja $A$ um evento crescente que depende de um conjunto finito de elos $\g$ de
+$\ed$ e considere
+\beq
+\label{eq:r1}
+\ppd(A)-\p(A)=\pp(\op\notin A, \opd\in A).
+\eeq
+
+Se $A$ é crescente, $\op\notin A$ e $\opd\in A$, então há elos $e$ tais que
+$\op(e)=0$ mas $\opd(e)=1$, isto é, $p\leq Z_e<p+\d$. Denote por $\epd$ o
+conjunto de tais elos. A probabilidade de que $|\epd|\geq2$ é $o(\d)$.
+Por outro lado, se $\op\notin A$, $\opd\in A$ e $|\epd|=1$, então o (estado do) elo $e$ em questão deve ser {\em
+essencial} em $\op$ 
+para (a ocorrência ou não de) $A$ no sentido de que $\op\notin A$, mas $\op'\in A$, onde $\op'$ é a
+configuração obtida de $\op$ trocando o status do elo $e$ de $0$ para $1$. 
+A última probabilidade em (\ref{eq:r1}) fica, então,
+$$\pp(\op\notin A, \opd\in A,|\epd|=1)+o(\d).$$
+
+A probabilidade acima pode ser escrita como
+$$
+\sum_{e\in\g}\pp(\op\notin A, \opd\in A,\epd=\{e\}).
+$$
+
+O evento dentro da probabilidade na soma é equivalente ao evento
+$$
+\{\mbox{$e$ é essencial em $\op$ para $A$},p\leq Z_e<p+\d,\epd=\{e\}\}.
+$$
+Aquela probabilidade pode ser escrita, então, como
+\beqn
+\label{eq:piv1}
+\mbox{}\!\!\!\!\!\!\!\!&&\pp[\mbox{$e$ é essencial em $\op$ para $A$},p\leq
+Z_e<p+\d]\\
+\label{eq:piv2}
+\mbox{}\!\!\!\!\!\!\!\!&-&\pp[\mbox{$e$ é essencial em $\op$ para $A$},p\leq
+Z_e<p+\d,\epd\ne\{e\}].
+\eeqn
+
+A probabilidade em~(\ref{eq:piv2}) é limitada superiormente por
+$$\pp(|\epd|\geq2)=o(\d).$$
+
+Observemos agora que o evento \{$e$ é essencial em $\op$ para $A$\} não depende de $e$.
+Logo, a probabilidade em~(\ref{eq:piv1}) fatora. 
+
+Combinando os argumentos acima, temos
+\beqnn
+\ppd(A)-\p(A)\=\sum_e\pp(\mbox{$e$ é essencial em $\op$ para $A$})\pp(p\leq Z_e<p+\d)+o(\d)\\
+             \=\d\sum_e\pp(\mbox{$e$ é essencial em $\op$ para $A$})+o(\d)\\
+             \=\d E(N(A))+o(\d),
+\eeqnn
+onde $N(A)$ denota o número de elos essenciais em $\op$ para $A$ (e
+$E$ é a esperança com respeito a $\pp$).
+
+Modificando um pouco a terminologia, e voltando ao modelo com as variáveis de
+Bernoulli, dado um evento qualquer $A\in\e$ e uma configuração $\om\in\Om$, 
+definimos um elo $e$ como {\em pivotal} para $A$ (mais precisamente, para
+($A,\om$)) se, denotando por
+$\om'$ a configuração idêntica a $\om$ em todos os elos com exceção de $e$, em
+que $\om$ e $\om'$ são diferentes, uma das duas coisas acontece: ou
+$$\om\in A\quad\mbox{e}\quad\om'\notin A$$
+ou
+$$\om\notin A\quad\mbox{e}\quad\om'\in A.$$
+
+Seja $N(A)$ o número de elos pivotais para $A$. O argumento acima prova o seguinte.
+
+\vs
+
+\bteo {\bf Fórmula de Russo~\cite{kn:R}}
+
+Se $A$ for um evento crescente dependendo de um conjunto finito de elos,
+então
+\beq
+\label{eq:rus}
+\frac{d}{dp}\p(A)=\ep(N(A)).
+\eeq
+\eteo  
+
+\vs
+
+A equação (\ref{eq:rus}) também pode ser escrita
+$$
+\frac{d}{dp}\p(A)=\sum_{e}\p(\mbox{$e$ é pivotal para $A$}).
+$$
+
+O uso que se fará da fórmula de Russo parte da observação de
+que o evento \{$e$ é pivotal para $A$\} é independente do elo $e$ e portanto
+independente do evento \{$e$ está aberto\}, para deduzir que
+$$
+\p(\mbox{$e$ é pivotal para $A$})=
+\frac{1}{p}\p(\mbox{$e$ está aberto e é pivotal para $A$}).
+$$
+
+Logo, se $A$ for crescente, aplicando a fórmula de Russo temos
+\beqn
+\frac{d}{dp}\p(A)\=\frac{1}{p}\sum_{e}\p(\mbox{$e$ está aberto e é pivotal para $A$})\\
+\=\frac{1}{p}\sum_{e}\p(A\cap\{\mbox{$e$ é pivotal para $A$}\})\\
+\=\frac{1}{p}\sum_{e}\p(A)\p(\mbox{$e$ é pivotal para $A$}|A)\\
+\=\frac{1}{p}\ep(N(A)|A)\p(A).
+\eeqn
+
+Dividindo a primeira e última expressões por $\p(A)$ e integrando em
+$[p_1,p_2]$ ($0< p_1\leq p_2\leq1$), chegamos a
+\beq
+P_{p_2}(A)=P_{p_1}(A)\exp\left(\int_{p_1}^{p_2}\frac{1}{p}\ep(N(A)|A)dp\right).
+\eeq
+
+A identidade acima será aplicada no próximo capítulo.

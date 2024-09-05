@@ -1,0 +1,183 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Neste apêndice, provaremos o Lema~\ref{le:app} a partir de~(\ref{eq:eq3}).
+Isto é, queremos mostrar que
+para $p<\pce$, existe uma constante $\delp$ tal que
+\beq
+\label{eq:a1}
+\gpn\leq\delp n^{-1/2}
+\eeq
+
+a partir de
+\beq 
+\label{eq:a2} 
+\gan\leq\gbn\exp\left[(\b-\a)-(\b-\a)\frac{n}{\sum_{i=0}^ng_\beta(i)}\right], 
+\eeq 
+para $0\leq\a\leq\b<\pce$.
+Além de~(\ref{eq:a2}), os únicos fatos requeridos pelo argumento são
+\beqn
+\label{eq:c1}
+\mbox{$0<\gpn<1$ para todo $n$ e $p\in[0,\pce)$,}\\
+\label{eq:c2}
+\mbox{$\gpn$ é não-decrescente em $p$ para todo $p\in[0,\pce)$,}\\
+\label{eq:c3}
+\mbox{$\gpn$ é não-crescente em $n$ para todo $p\in[0,\pce)$ e}\\
+\label{eq:c4}
+\gpn\to0\quad\mbox{quando $n\to\infty$ e $p\in[0,\pce)$.}
+\eeqn
+
+\vs
+
+\noindent{\bf Prova de~(\ref{eq:a1})}
+
+Reproduzimos o argumento em \cite{kn:G}. Vamos primeiro escolher uma 
+subseqüência $n_1,n_2,\ldots$ ao longo da qual $\gpn$ converge a $0$
+bastante rápido. A seguir, fechamos as lacunas.
+
+Fixemos $\b<\pce$ e um inteiro positivo $n$. Sejam $\a$ tal que $0<\a<\b$ e
+$n'\geq n$. Adiante escolheremos $\a$ e $n'$ explicitamente em termos de $\b$.
+
+De~(\ref{eq:a2}),
+\beqn
+\nonumber
+\gal\le\gbl\exp\left(1-\frac{n'(\b-\a)}{\sum_{i=0}^{n'}\gbi}\right)\\
+\label{eq:exp}
+\le\gbn\exp\left(1-\frac{n'(\b-\a)}{\sum_{i=0}^{n'}\gbi}\right)
+\eeqn
+pois $n\leq n'$. Queremos escrever o expoente em termos de $\gbn$ e para
+isto escolheremos $n'$ apropriadamente. Vamos quebrar a soma em duas partes,
+para $i<n$ e $i\geq n$. Usando~(\ref{eq:c3}), temos
+\beqnn
+\frac{1}{n'}\sum_{i=0}^{n'}\gbi\le\frac{1}{n'}\{n\gbo+n'\gbn\}\\
+\le3\gbn
+\eeqnn
+se $n'\geq n\lfloor\gbn^{-1}\rfloor$. Vamos definir agora
+\beq
+\label{eq:ga}
+n'=n\gabn
+\eeq
+onde $\gabn=\lfloor\gbn^{-1}\rfloor$ e
+deduzir de~(\ref{eq:exp}) que
+\beq
+\label{eq:gal}
+\gal\leq\gbn\exp\left(1-\frac{\b-\a}{3\gbn}\right).
+\eeq
+Escolhemos a seguir $\a$ fazendo
+\beq
+\label{eq:al}
+\b-\a=3\gbn\{1-\log\gbn\}.
+\eeq
+De~(\ref{eq:c4}) temos $0<\a<\b$ se $n$ for escolhido bastante grande.
+
+De~(\ref{eq:gal}) temos
+\beq
+\label{eq:gal1}
+\gal\leq\gbn^2.
+\eeq
+Usaremos esta conclusão recursivamente a seguir. Mostramos até agora
+que, para $\b<\pce$ existe $\nob$ tal que~(\ref{eq:gal1}) vale sempre que
+$n\geq\nob$ e $\a$ e $n'$ forem dados por~(\ref{eq:al}) e~(\ref{eq:ga})
+respectivamente.
+
+Fixemos agora $p<\pce$ e escolhamos $\pi$ tal que $p<\pi<\pce$. Construimos 
+agora seqüências $(\pei,\,i\geq0)$ de probabilidades e $(\eni,\,i\geq0)$ de
+inteiros. Façamos $p_0=\pi$ e deixemos $n_0$ para mais tarde. Tendo encontrado
+$p_0,p_1,\ldots,\pei$ e $n_0,n_1,\ldots,\eni$, definimos
+\beq
+\label{eq:ind}
+\enu=\eni\gai\quad\mbox{e}\quad \pei-\peu=3\gi(1-\log\gi)
+\eeq
+onde $\gi=\gpin$ e $\gai=\lfloor\gi^{-1}\rfloor$. Note que $\eni\leq\enu$ 
+e $\pei>\peu$.
+
+A recursão em~(\ref{eq:ind}) é válida enquanto $\peu>0$ e este será o caso se
+$n_0$ for escolhido suficientemente grande. Para ver isto, argumentamos da seguinte 
+forma. Da definição de $p_0,\ldots,\pei$ e $n_0,\ldots,\eni$ e da discussão que levou
+a~(\ref{eq:gal1}) temos
+\beq
+\label{eq:gal2}
+\gju\leq\gj^2
+\eeq
+para $j=0,1,\ldots,i-1.$ Se uma seqüência de números reais
+$(\xj,\,j\geq0)$ satisfizer $0<x_0<1,\,x_{j+1}=\xj^2$ para $j\geq0$, então é fácil de 
+ver que 
+\beqnn
+s(x_0)=\sum_{j=0}^\infty3\xj(1-\log\xj)<\infty
+\eeqnn
+e que $s(x_0)\to0$ quando $x_0\to0$. Podemos então tomar $x_0$ pequeno o suficiente para 
+que
+\beq
+\label{eq:xo}
+s(x_0)\leq\pi-p
+\eeq
+e depois tomar $n_0$ grande o suficiente para que $\go=\gpio<\xo$.
+Agora $\hx=3x(1-\log x)$ é uma função crescente em $[0,\xo]$, o que junto 
+com~(\ref{eq:ind}) e~(\ref{eq:gal2}) implica
+\beqnn
+\peu\=\pei-3\gi(1-\log\gi)\\
+\=\pi-\sum_{j=0}^i3\gj(1-\log\gj)\\
+\ge\pi-\sum_{j=0}^i3\xj(1-\log\xj)\\
+\ge p
+\eeqnn
+por~(\ref{eq:xo}).
+
+Desta forma, escolhendo $n_0$ convenientemente, teremos $\peu>0$ para
+todo $i$ e também 
+\beqnn
+\ptil=\lim_{i\to\infty}\pei
+\eeqnn
+satisfazendo $\ptil\geq p$. Vamos supor que $n_0$ foi escolhido da forma adequada.
+Temos então a recursão~(\ref{eq:ind}) válida e $\ptil\geq p$. De~(\ref{eq:ind})
+e~(\ref{eq:gal2}) temos
+\beqnn
+\nk=n_0\ga_0\ga_1\ldots\ga_{k-1}
+\eeqnn
+para $k\geq1$ e
+\beqn
+\nonumber
+g_{k-1}^2\=g_{k-1}g_{k-1}\\
+\nonumber
+\le g_{k-1}g_{k-2}^2\leq\cdots\\
+\nonumber
+\le g_{k-1}g_{k-2}\ldots g_1 g_0^2\\
+\nonumber
+\le (\ga_{k-1}\ga_{k-2}\ldots \ga_0)^{-1} g_0\\
+\label{eq:gal3}
+\=\d^2\nk^{-1},
+\eeqn
+onde $\d=n_0 g_0$.
+
+O argumento está basicamente terminado. Seja $n>n_0$. Seja $k$ um inteiro tal que
+$n_{k-1}\leq n<\nk$, o que é possível pois $g_k\to0$ quando $k\to\infty$ e logo
+$n_{k-1}<\nk$ para todo $k$ bastante grande. Então
+\beqnn
+\gpn\le g_{p_{k-1}}(n_{k-1})\quad\mbox{pois $p\leq p_{k-1}$}\\
+\=g_{k-1}\\
+\le\d\nk^{-1/2}\quad\mbox{por~(\ref{eq:gal3})}\\
+\le\d n^{-1/2}\quad\mbox{pois $n<\nk$}
+\eeqnn
+como queríamos. Isto vale para $n>n_0$. Ajustando a constante, temos a
+desigualdade para todo $n$. $\bo$
+
+
+
+
+
+
+
+
+
+
+
