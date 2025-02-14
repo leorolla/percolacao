@@ -15,7 +15,7 @@
 % along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{bookml/bookml}[2024/08/21 v0.9.1 BookML: bookdown flavoured GitBook port for LaTeXML]
+\ProvidesPackage{bookml/bookml}[2025/01/31 v0.15.0 BookML: bookdown flavoured GitBook port for LaTeXML]
 
 \newif\ifbml@images
 \newif\ifbml@htmlsyntax
@@ -31,6 +31,8 @@
 \DeclareOption*{}
 
 \ProcessOptions
+
+\newcommand{\BookMLversion}{v0.15.0}
 
 % import system latexml.sty if available, otherwise use local copy
 \IfFileExists{latexml.sty}{
