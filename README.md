@@ -19,8 +19,8 @@ Para compilar o HTML:
     apt install texlive-full # overkill
     git clone https://github.com/leorolla/percolacao
     cd percolacao
-    wget https://github.com/vlmantova/bookml/releases/download/v0.9.1/release.zip
-    unzip release.zip
+    wget https://github.com/vlmantova/bookml/releases/download/v0.15.0/release.zip
+    unzip -ou release.zip
     cp bookml/GNUmakefile .
     make detect
     make
