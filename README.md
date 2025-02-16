@@ -20,7 +20,7 @@ Para compilar o HTML:
     git clone https://github.com/leorolla/percolacao
     cd percolacao
     wget https://github.com/vlmantova/bookml/releases/download/v0.15.0/release.zip
-    unzip -ou release.zip
+    unzip -o release.zip
     cp bookml/GNUmakefile .
     make detect
     make
